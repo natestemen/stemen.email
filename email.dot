@@ -1,0 +1,38 @@
+digraph emailForwarding {
+  rankdir=BT;
+  graph [bgcolor=transparent]
+  node [shape=plaintext, fontname=Courier];
+
+  // make invisible ranks
+  rank1 [style=invisible];
+  rank2 [style=invisible];
+  rank1 -> rank2 [color=transparent];
+
+  yahoo     [label="natestemen@yahoo.com"];
+  gmail     [label="nathanielstemen@gmail.com"];
+  steezy    [label="steeeeeezy94@yahoo.com"]
+  main      [label=<nate@stemen.email<BR/><FONT FACE="Helvetica" POINT-SIZE="11">(primary)</FONT>>]
+  nyu       [label="natestemen@nyu.edu"]
+  poly      [label="ns2627@students.poly.edu"]
+  secondary [label=<natestemen@pm.me<BR/><FONT FACE="Helvetica" POINT-SIZE="11">(secondary)</FONT>>]
+
+  gmail  -> main;
+  yahoo  -> main;
+  steezy -> main;
+
+  subgraph cluster_nyu {
+    graph [style=dotted];
+    poly -> nyu;
+    label="NYU Emails";
+  }
+
+  {rank = same; main; secondary;}
+  {
+    rank = same;
+    rank1 -> gmail -> yahoo -> steezy [ style=invis ];
+  }
+  {
+    rank = same;
+    rank2 -> main -> secondary [ style=invis ];
+  }
+}
