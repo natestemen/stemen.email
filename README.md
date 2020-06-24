@@ -22,3 +22,4 @@ Anyway, here are the groups I use
 - `list.stemen.email`: mailing lists
 - `mail.stemen.email`: anything mail related. backup emails for other emails, email forwarding, etc.
 - `purchase.stemen.email`: one time purchases where I don't need an account
+- `money.stemen.email`: anything related to money
