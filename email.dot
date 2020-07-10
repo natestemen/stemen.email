@@ -6,7 +6,9 @@ digraph emailForwarding {
   // make invisible ranks
   rank1 [style=invisible];
   rank2 [style=invisible];
-  rank1 -> rank2 [color=transparent];
+  rank3 [style=invisible];
+  rank4 [style=invisible];
+  rank1 -> rank2 -> rank3 -> rank4 [color=transparent];
 
   yahoo     [label="natestemen@yahoo.com"];
   gmail     [label="nathanielstemen@gmail.com"];
@@ -14,6 +16,7 @@ digraph emailForwarding {
   main      [label=<nate@stemen.email<BR/><FONT FACE="Helvetica" POINT-SIZE="11">(primary)</FONT>>]
   nyu       [label="ns@nyu.edu"]
   poly      [label="ns2627@students.poly.edu"]
+  waterloo  [label="nstemen@uwaterloo.ca"];
   secondary [label=<natestemen@pm.me<BR/><FONT FACE="Helvetica" POINT-SIZE="11">(secondary)</FONT>>]
 
   gmail  -> main;
@@ -26,13 +29,27 @@ digraph emailForwarding {
     label="NYU Emails";
   }
 
+  subgraph cluster_waterloo {
+    graph [style=dotted];
+    waterloo;
+    label="U Waterloo Email";
+  }
+
   {rank = same; main; secondary;}
   {
     rank = same;
-    rank1 -> gmail -> yahoo -> steezy [ style=invis ];
+    rank3 -> gmail -> yahoo -> steezy [ style=invis ];
   }
   {
     rank = same;
-    rank2 -> main -> secondary [ style=invis ];
+    rank4 -> main -> secondary [ style=invis ];
   }
+  // {
+  //   rank = same;
+  //   rank2 -> nyu -> waterloo [ style=invis ];
+  // }
+  // {
+  //   rank = same;
+  //   rank1 -> poly; [ style=invis];
+  // }
 }
