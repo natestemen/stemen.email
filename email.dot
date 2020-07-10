@@ -12,7 +12,7 @@ digraph emailForwarding {
   gmail     [label="nathanielstemen@gmail.com"];
   steezy    [label="steeeeeezy94@yahoo.com"]
   main      [label=<nate@stemen.email<BR/><FONT FACE="Helvetica" POINT-SIZE="11">(primary)</FONT>>]
-  nyu       [label="natestemen@nyu.edu"]
+  nyu       [label="ns@nyu.edu"]
   poly      [label="ns2627@students.poly.edu"]
   secondary [label=<natestemen@pm.me<BR/><FONT FACE="Helvetica" POINT-SIZE="11">(secondary)</FONT>>]
 
